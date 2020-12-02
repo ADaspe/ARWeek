@@ -16,6 +16,8 @@ namespace PotionCreationSystem
         [Space(10f)]
         public string text;
         public Sprite Icon;
+        [TextArea]
+        public string description;
         [Range(0f, 300f)]
         public float tempsDeLaRecette = 60f;
 
