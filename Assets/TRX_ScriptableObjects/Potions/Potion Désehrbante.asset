@@ -16,5 +16,6 @@ MonoBehaviour:
   index: 0
   text: "Potion D\xE9sherbante"
   Icon: {fileID: 0}
+  description: Ravageur de jardins depuis 1316
   tempsDeLaRecette: 60
   listeIngredients: 020000000600000000000000

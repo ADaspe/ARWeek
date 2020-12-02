@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ced9b37bf837764b9a9fd16e6efb2b7, type: 3}
-  m_Name: Feux de l'amour
+  m_Name: Engrais magique
   m_EditorClassIdentifier: 
   Ingredient: 0
   index: 0
-  text: Feux de l'Amour
+  text: Engrais magique
   Icon: {fileID: 0}
-  description: Explosive ! Comme mon premier mariage...
+  description: "Les plantes poussent bien... m\xEAme un peu trop"
   tempsDeLaRecette: 60
-  listeIngredients: 040000000300000004000000
+  listeIngredients: 020000000500000000000000

@@ -16,5 +16,6 @@ MonoBehaviour:
   index: 0
   text: Potion Explosive
   Icon: {fileID: 0}
+  description: BOUM !
   tempsDeLaRecette: 60
   listeIngredients: 030000000300000000000000
