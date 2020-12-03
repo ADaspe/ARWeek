@@ -20,6 +20,8 @@ public class PotionSelection : MonoBehaviour
     public Button[] m_Buttons;
     public Image[] m_Images;
 
+    public Light[] lightPotion;
+
     private void Start()
     {
         potionQntyModifier = new int[m_InventoryColor.colorPotions.Length, potionIndex.Length];
@@ -70,6 +72,7 @@ public class PotionSelection : MonoBehaviour
             // assign color
             Color colorToReturn = m_InventoryColor.colorPotions[potionIndex[v]].color;
             m_Images[v].color = colorToReturn;
+            lightPotion[v].color = colorToReturn;
 
             // update quantity modifier
             
