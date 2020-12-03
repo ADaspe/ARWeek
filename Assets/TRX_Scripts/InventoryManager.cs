@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using PotionCreationSystem;
 
 namespace InventorySystem
 {
@@ -10,12 +11,14 @@ namespace InventorySystem
     {
         public Inventory inventoryMaster;
 
-        public string redString = "Red";
+        public bool debug = true;
+
+        /*public string redString = "Red";
         public string greenString = "Green";
         public string blueString = "Blue";
         public string blackString = "Black";
         public string pinkString = "Pink";
-        public string whiteString = "White";
+        public string whiteString = "White";*/
         
         
         //public UnityEvent addRessources;
@@ -32,60 +35,64 @@ namespace InventorySystem
 
         }
 
-        public void AddRessources(string ressource, int nbr)
+        public void AddRessources(Potions.Ingredients couleur, int nbr)
         {
-            if(ressource == redString)
+            if(couleur == Potions.Ingredients.RED)
             {
                 inventoryMaster.Red += nbr;
             }
-            if (ressource == greenString)
+            if (couleur == Potions.Ingredients.GREEN)
             {
                 inventoryMaster.Green += nbr;
             }
-            if (ressource == blueString)
+            if (couleur == Potions.Ingredients.BLUE)
             {
                 inventoryMaster.Blue += nbr;
             }
-            if (ressource == blackString)
+            if (couleur == Potions.Ingredients.BLACK)
             {
                 inventoryMaster.Black += nbr;
             }
-            if (ressource == whiteString)
+            if (couleur == Potions.Ingredients.WHITE)
             {
                 inventoryMaster.White += nbr;
             }
-            if (ressource == pinkString)
+            if (couleur == Potions.Ingredients.PINK)
             {
                 inventoryMaster.Pink += nbr;
             }
+
+            if (debug) print("Ressources " + couleur + " ajoutée !");
         }
 
-        public void SubRessources(string ressource, int nbr)
+        public void SubRessources(Potions.Ingredients couleur, int nbr)
         {
-            if (ressource == redString)
+            if (couleur == Potions.Ingredients.RED)
             {
                 inventoryMaster.Red -= nbr;
             }
-            if (ressource == greenString)
+            if (couleur == Potions.Ingredients.GREEN)
             {
                 inventoryMaster.Green -= nbr;
             }
-            if (ressource == blueString)
+            if (couleur == Potions.Ingredients.BLUE)
             {
                 inventoryMaster.Blue -= nbr;
             }
-            if (ressource == blackString)
+            if (couleur == Potions.Ingredients.BLACK)
             {
                 inventoryMaster.Black -= nbr;
             }
-            if (ressource == whiteString)
+            if (couleur == Potions.Ingredients.WHITE)
             {
                 inventoryMaster.White -= nbr;
             }
-            if (ressource == pinkString)
+            if (couleur == Potions.Ingredients.PINK)
             {
                 inventoryMaster.Pink -= nbr;
             }
+
+            if (debug) print("Ressources " + couleur + " ajoutée !");
         }
     }
 
