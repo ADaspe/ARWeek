@@ -17,6 +17,9 @@ namespace Collectibles
         [Tooltip("Max nbr of Collectibles spawned at the same time")]
         public int maxCollectibles = 8;
         public bool debug = true;
+        public Vector3 baseLocation;
+
+        private Vector3 newLocation;
 
 
         private int collCount;
@@ -45,6 +48,7 @@ namespace Collectibles
 
         private void DelayBetweenSpawn()
         {
+            delayTimer += Time.deltaTime;
 
         }
 
@@ -52,35 +56,45 @@ namespace Collectibles
         {
             if (couleur == Potions.Ingredients.BLACK)
             {
-                collToSpawn = blackColl;            
-                
+                collToSpawn = blackColl;
+                if (debug) print("Collectible de couleur : " + couleur + " a spawner");
                 //Spawn le collectible
                 CollectibleSpawn(collToSpawn);
             }
             else if (couleur == Potions.Ingredients.WHITE)
             {
                 collToSpawn = whiteColl;
+                if (debug) print("Collectible de couleur : " + couleur + " a spawner");
+
                 CollectibleSpawn(collToSpawn);
             }
             else if (couleur == Potions.Ingredients.BLUE)
             {
                 collToSpawn = blueColl;
+                if (debug) print("Collectible de couleur : " + couleur + " a spawner");
+
                 CollectibleSpawn(collToSpawn);
             }
             else if (couleur == Potions.Ingredients.GREEN)
             {
                 collToSpawn = greenColl;
+                if (debug) print("Collectible de couleur : " + couleur + " a spawner");
+
                 CollectibleSpawn(collToSpawn);
 
             }
             else if (couleur == Potions.Ingredients.PINK)
             {
                 collToSpawn = pinkColl;
+                if (debug) print("Collectible de couleur : " + couleur + " a spawner");
+
                 CollectibleSpawn(collToSpawn);
             }
             else
             {
                 collToSpawn = redColl;
+                if (debug) print("Collectible de couleur : " + couleur + " a spawner");
+
                 CollectibleSpawn(collToSpawn);
 
             }
@@ -90,12 +104,16 @@ namespace Collectibles
         private void CollectibleSpawn(GameObject toSpawn)
         {
             collSpawned = Instantiate(toSpawn, SpawnLocation(), Quaternion.identity);
+            if (debug) print("Collectible Spawned !");
             collManagerScript.collectiblePool.Add(collSpawned);
             collCount++;
         }
         private Vector3 SpawnLocation()
         {
-            return new Vector3(0, 0, 0);
+            if (debug) print("Randomisation de la Localisation...");
+            newLocation = baseLocation;
+            newLocation += new Vector3(Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f));
+            return newLocation;
         }
 
     }
