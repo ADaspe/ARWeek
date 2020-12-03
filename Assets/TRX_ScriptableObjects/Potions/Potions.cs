@@ -9,7 +9,6 @@ namespace PotionCreationSystem
     {
         public enum Ingredients { EMPTY, BLUE, GREEN, RED, PINK, WHITE, BLACK };
         
-        public Ingredients Ingredient;
 
         [Header("Paramètres")]
         public int index;
