@@ -29,7 +29,7 @@ namespace Collectibles
             {
                 if (debug) Debug.Log("Le lifeTime des cristaux à été dépassé !");
 
-                Destroy(this);
+                Destroy(gameObject);
             }
         }
     }

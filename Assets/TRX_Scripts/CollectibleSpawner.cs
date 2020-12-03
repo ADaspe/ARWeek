@@ -104,7 +104,10 @@ namespace Collectibles
 
         private void CollectibleSpawn(GameObject toSpawn)
         {
-            collSpawned = Instantiate(toSpawn, SpawnLocation(), true);
+            Transform spawn = SpawnLocation();
+            collSpawned = Instantiate(toSpawn, cameraMain, true);
+            //Demander à Alexis comment on fait pour faire spawner un tuc en face de la caméra
+            //collSpawned.transform.SetParent(null);
             if (debug) print("Collectible Spawned !");
             collManagerScript.collectiblePool.Add(collSpawned);
             collCount++;
@@ -113,7 +116,10 @@ namespace Collectibles
         {
             if (debug) print("Randomisation de la Localisation...");
             newLocation = cameraMain;
-            newLocation.position += new Vector3(Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f), profondeur);
+           
+            newLocation.position = cameraMain.forward;
+            Debug.Log("X : " + newLocation.position.x + " Y : "+ newLocation.position.y + " Z : "+ newLocation.position.z);
+            newLocation.position += new Vector3(Random.Range(-1, 1), Random.Range(-1, 1), profondeur);
             return newLocation;
         }
 

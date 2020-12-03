@@ -413,8 +413,8 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.1
-  far clip plane: 20
-  field of view: 60
+  far clip plane: 10000
+  field of view: 165.6
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -612,6 +612,16 @@ PrefabInstance:
       propertyPath: baseLocation.z
       value: -20
       objectReference: {fileID: 0}
+    - target: {fileID: 6154681938098017631, guid: 5c726feca7e935e4684913052dc83604,
+        type: 3}
+      propertyPath: profondeur
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6154681938098017631, guid: 5c726feca7e935e4684913052dc83604,
+        type: 3}
+      propertyPath: cameraMain
+      value: 
+      objectReference: {fileID: 2004769031}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c726feca7e935e4684913052dc83604, type: 3}
 --- !u!114 &270089411206781481 stripped
@@ -703,6 +713,11 @@ PrefabInstance:
       propertyPath: collecSpawner
       value: 
       objectReference: {fileID: 270089411206781481}
+    - target: {fileID: 3501260497399971199, guid: 354d23ac5676db74c8df2410bb0da58d,
+        type: 3}
+      propertyPath: timeToWait
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 354d23ac5676db74c8df2410bb0da58d, type: 3}
 --- !u!1001 &4890603060483067718
