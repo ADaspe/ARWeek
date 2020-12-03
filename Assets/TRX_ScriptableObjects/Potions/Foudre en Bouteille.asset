@@ -16,5 +16,6 @@ MonoBehaviour:
   index: 0
   text: Foudre en Bouteille
   Icon: {fileID: 0}
+  description: 
   tempsDeLaRecette: 60
   listeIngredients: 010000000300000005000000
