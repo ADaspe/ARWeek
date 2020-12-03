@@ -17,9 +17,10 @@ namespace Collectibles
         [Tooltip("Max nbr of Collectibles spawned at the same time")]
         public int maxCollectibles = 8;
         public bool debug = true;
-        public Vector3 baseLocation;
+        public Transform cameraMain;
+        public float profondeur = 30f;
 
-        private Vector3 newLocation;
+        private Transform newLocation;
 
 
         private int collCount;
@@ -103,16 +104,16 @@ namespace Collectibles
 
         private void CollectibleSpawn(GameObject toSpawn)
         {
-            collSpawned = Instantiate(toSpawn, SpawnLocation(), Quaternion.identity);
+            collSpawned = Instantiate(toSpawn, SpawnLocation(), true);
             if (debug) print("Collectible Spawned !");
             collManagerScript.collectiblePool.Add(collSpawned);
             collCount++;
         }
-        private Vector3 SpawnLocation()
+        private Transform SpawnLocation()
         {
             if (debug) print("Randomisation de la Localisation...");
-            newLocation = baseLocation;
-            newLocation += new Vector3(Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f));
+            newLocation = cameraMain;
+            newLocation.position += new Vector3(Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f), profondeur);
             return newLocation;
         }
 

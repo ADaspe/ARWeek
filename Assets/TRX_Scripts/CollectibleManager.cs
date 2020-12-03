@@ -13,9 +13,9 @@ namespace Collectibles
         [Range(0.8f, 3f)]
         public float holdTime = 0.8f;
         private float holdTimer = 0f;
-        [Range(1f, 6f)]
+        /*[Range(1f, 6f)]
         public float lifetime = 5f;
-        private float lifetimeTimer = 0f ;
+        private int lifetimeTimer = 0;*/
 
         public List<GameObject> collectiblePool;
         private InventoryManager inventory;
@@ -33,12 +33,12 @@ namespace Collectibles
         void Update()
         {
             //Si un collectible à disparu, l'enlève de la liste
-            UpdateCollectibleList();
+            //UpdateCollectibleList();
 
             //InputCheck si le joueur Hold Tap
-            HoldTimerIncrement();
+            //HoldTimerIncrement();
 
-            CollectiblesLifetime();
+            //CollectiblesLifetime();
 
         }
 
@@ -93,7 +93,7 @@ namespace Collectibles
             collectiblePool.RemoveAll(collectible => collectiblesToDelete.Contains(collectible));
         }
 
-        private void CollectiblesLifetime()
+        /*private void CollectiblesLifetime()
         {
             lifetimeTimer += Time.deltaTime;
             if(lifetimeTimer >= lifetime && !(collectiblePool.Count == 0))
@@ -107,9 +107,9 @@ namespace Collectibles
 
                 StartCoroutine(DeleteCollectiblesToDelete());
             }
-        }
+        }*/
 
-        private IEnumerator DeleteCollectiblesToDelete()
+        /*private IEnumerator DeleteCollectiblesToDelete()
         {
             if (debug) Debug.Log("Les cristaux sont en plan depuis trop longtemps, ils sont détruits");
             foreach (GameObject collectibles in collectiblesToDelete)
@@ -117,6 +117,6 @@ namespace Collectibles
                 Destroy(collectibles);
                 yield return new WaitForSeconds(0.5f);
             }
-        }
+        }*/
     }
 }
