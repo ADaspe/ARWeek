@@ -1,20 +1,105 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using PotionCreationSystem;
+using InventorySystem;
 
-    namespace Collectibles
+
+namespace Collectibles
+{
+    public class CollectibleSpawner : MonoBehaviour
     {
-        public class CollectibleSpawner : MonoBehaviour
-        {
+        [Header("Settings")]
+        [Range(0.30f, 1f)]
+        [Tooltip("Little delay before the next collectible spawns")]
+        public float spawnDelay = 0.33f;
+        private float delayTimer = 0;
+        [Tooltip("Max nbr of Collectibles spawned at the same time")]
+        public int maxCollectibles = 8;
+        public bool debug = true;
+
+
+        private int collCount;
+
+        [Header("Collectibles")]
+        public GameObject redColl;
+        public GameObject blueColl;
+        public GameObject greenColl;
+        public GameObject pinkColl;
+        public GameObject blackColl;
+        public GameObject whiteColl;
+
+        private GameObject collToSpawn;
+        private GameObject collSpawned;
+        private CollectibleManager collManagerScript;
 
         private void Start()
         {
-            
-        }
-        private void Update()
-        {
-            
+            collManagerScript = gameObject.GetComponent<CollectibleManager>();
         }
 
+        private void Update()
+        {
+            DelayBetweenSpawn();
         }
+
+        private void DelayBetweenSpawn()
+        {
+
+        }
+
+        public void SpawnCollectibleOfColor(Potions.Ingredients couleur)
+        {
+            if (couleur == Potions.Ingredients.BLACK)
+            {
+                collToSpawn = blackColl;            
+                
+                //Spawn le collectible
+                CollectibleSpawn(collToSpawn);
+            }
+            else if (couleur == Potions.Ingredients.WHITE)
+            {
+                collToSpawn = whiteColl;
+                CollectibleSpawn(collToSpawn);
+            }
+            else if (couleur == Potions.Ingredients.BLUE)
+            {
+                collToSpawn = blueColl;
+                CollectibleSpawn(collToSpawn);
+            }
+            else if (couleur == Potions.Ingredients.GREEN)
+            {
+                collToSpawn = greenColl;
+                CollectibleSpawn(collToSpawn);
+
+            }
+            else if (couleur == Potions.Ingredients.PINK)
+            {
+                collToSpawn = pinkColl;
+                CollectibleSpawn(collToSpawn);
+            }
+            else
+            {
+                collToSpawn = redColl;
+                CollectibleSpawn(collToSpawn);
+
+            }
+
+        }
+
+        private void CollectibleSpawn(GameObject toSpawn)
+        {
+            collSpawned = Instantiate(toSpawn, SpawnLocation(), Quaternion.identity);
+            collManagerScript.collectiblePool.Add(collSpawned);
+            collCount++;
+        }
+        private Vector3 SpawnLocation()
+        {
+            return new Vector3(0, 0, 0);
+        }
+
     }
+
+}
+
+

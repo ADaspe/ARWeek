@@ -16,6 +16,6 @@ MonoBehaviour:
   index: 0
   text: Liqueur de Chance
   Icon: {fileID: 0}
-  description: 
+  description: Une petite goutte suffit...
   tempsDeLaRecette: 60
   listeIngredients: 030000000400000002000000

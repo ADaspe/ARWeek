@@ -16,6 +16,6 @@ MonoBehaviour:
   index: 0
   text: "Potion de d\xE9prime"
   Icon: {fileID: 0}
-  description: 
+  description: "Pourquoi quelqu'un irait boire \xE7a !?"
   tempsDeLaRecette: 60
   listeIngredients: 010000000600000000000000
