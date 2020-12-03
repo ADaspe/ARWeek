@@ -9,7 +9,7 @@ namespace Collectibles
     public class CollectibleManager : MonoBehaviour
     {
         [Header("Settings")]
-        public bool debug = false;
+        public bool debug = true;
         [Range(0.8f, 3f)]
         public float holdTime = 0.8f;
         private float holdTimer = 0f;
@@ -85,6 +85,7 @@ namespace Collectibles
             {
                 if (!collectible)
                 {
+                    if (debug) Debug.Log("On a une référence à un cristal fantôme, débarassons-nous en !");
                     collectiblesToDelete.Add(collectible);
                 }
             }
@@ -97,7 +98,9 @@ namespace Collectibles
             lifetimeTimer += Time.deltaTime;
             if(lifetimeTimer >= lifetime && !(collectiblePool.Count == 0))
             {
-                foreach(GameObject collectible in collectiblePool)
+                if (debug) Debug.Log("Le lifeTime des cristaux à été dépassé !");
+
+                foreach (GameObject collectible in collectiblePool)
                 {
                     collectiblesToDelete.Add(collectible);
                 }
@@ -108,8 +111,10 @@ namespace Collectibles
 
         private IEnumerator DeleteCollectiblesToDelete()
         {
-            foreach(GameObject collectibles in collectiblesToDelete)
+            if (debug) Debug.Log("Les cristaux sont en plan depuis trop longtemps, ils sont détruits");
+            foreach (GameObject collectibles in collectiblesToDelete)
             {
+                Destroy(collectibles);
                 yield return new WaitForSeconds(0.5f);
             }
         }
