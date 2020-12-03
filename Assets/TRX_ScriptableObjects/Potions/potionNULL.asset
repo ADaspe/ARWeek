@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ced9b37bf837764b9a9fd16e6efb2b7, type: 3}
+  m_Name: potionNULL
+  m_EditorClassIdentifier: Assembly-CSharp:PotionCreationSystem:PotionScriptables
+  Ingredient: 0
+  index: 0
+  text: PotionNULL
+  Icon: {fileID: 0}
+  tempsDeLaRecette: 60
+  listeIngredients: 000000000000000000000000
