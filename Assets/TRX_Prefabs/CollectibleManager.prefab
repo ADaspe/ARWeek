@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 43403281489223863}
-  - component: {fileID: 5879150733919165260}
   - component: {fileID: 6154681938098017631}
+  - component: {fileID: 5367766292618965319}
   m_Layer: 0
   m_Name: CollectibleManager
   m_TagString: Untagged
@@ -32,24 +32,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5879150733919165260
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3531664680457973895}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3801599a81a5a554b9555707dd384d63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  debug: 1
-  holdTime: 0.8
-  collectiblePool: []
-  onHold:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &6154681938098017631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,3 +61,21 @@ MonoBehaviour:
     type: 3}
   whiteColl: {fileID: 4244740149675130405, guid: b97f8135082fb1647b6ac3bba06d11d3,
     type: 3}
+--- !u!114 &5367766292618965319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3531664680457973895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67723d8d974307e4685eea05c2b9d9dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 1
+  holdTime: 0.8
+  collectiblePool: []
+  onHold:
+    m_PersistentCalls:
+      m_Calls: []

@@ -45,8 +45,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_CameraManager: {fileID: 0}
   m_RawCameraImage: {fileID: 0}
-  r: 0
-  g: 0
-  b: 0
-  invent: {fileID: 0}
-  col: {r: 0, g: 0, b: 0, a: 0}
+  collecSpawner: {fileID: 0}
+  timeToWait: 1
