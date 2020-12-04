@@ -19,13 +19,13 @@ public class PotionCompleteUI : MonoBehaviour
     public Text potionDescTextField;
     public Button validateButton;
     [Space(10f)]
-    public Potions currentPotion;
+    public Potions currentPotion = null;
     public UnityEvent onValidate;
 
     // Start is called before the first frame update
     void Start()
     {
-        UpdateGraphics();
+        //UpdateGraphics();
     }
 
     // Update is called once per frame
@@ -45,6 +45,7 @@ public class PotionCompleteUI : MonoBehaviour
     public void SetPotion(Potions potion)
     {
         currentPotion = potion;
+        UpdateGraphics();
 ;
     }
 }
