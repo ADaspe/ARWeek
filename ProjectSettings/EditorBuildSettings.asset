@@ -6,7 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-<<<<<<< HEAD
     path: Assets/Scenes/AXD_TestScene.unity
     guid: 86c6d0d6043782d4b8e0cbbab3824c22
   m_configObjects:
@@ -14,8 +13,3 @@ EditorBuildSettings:
       type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 801ebb4dcba39fc489b626aac0726f23,
       type: 2}
-=======
-    path: Assets/Scenes/LAC_TestScene.unity
-    guid: e5bbf73efe5581243b711b42dc27d0fc
-  m_configObjects: {}
->>>>>>> Louis

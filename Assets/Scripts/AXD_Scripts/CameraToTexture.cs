@@ -15,9 +15,9 @@ public class CameraToTexture : MonoBehaviour
     public ARCameraManager m_CameraManager;
     public RawImage m_RawCameraImage;
     public CollectibleSpawner collecSpawner;
-    public float r, g, b;
+    private float r, g, b;
     Texture2D m_CameraTexture;
-    public Inventory invent;
+    //public Inventory invent;
     private Color[] cols;
     private bool canSpawn;
     public float timeToWait;
