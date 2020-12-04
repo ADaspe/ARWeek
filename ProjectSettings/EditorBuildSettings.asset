@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/LAC_TestScene.unity
     guid: e5bbf73efe5581243b711b42dc27d0fc
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/AXD_TestScene.unity
     guid: 86c6d0d6043782d4b8e0cbbab3824c22
   - enabled: 1
