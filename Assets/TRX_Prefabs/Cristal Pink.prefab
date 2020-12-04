@@ -312,6 +312,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
   couleur: 4
+  debug: 1
+  lifetime: 10
 --- !u!1 &6983508866767956335
 GameObject:
   m_ObjectHideFlags: 0

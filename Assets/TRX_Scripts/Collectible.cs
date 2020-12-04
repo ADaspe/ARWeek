@@ -11,12 +11,8 @@ namespace Collectibles
         public Animator animator;
         public Potions.Ingredients couleur = Potions.Ingredients.EMPTY;
         public bool debug = true;
-
-
-        [Range(1f, 6f)]
-        public float lifetime = 5f;
+        public float lifetime;
         private float lifetimeTimer = 0f;
-
         private void Update()
         {
             CollectiblesLifetime();
@@ -29,7 +25,7 @@ namespace Collectibles
             {
                 if (debug) Debug.Log("Le lifeTime des cristaux à été dépassé !");
 
-                Destroy(this);
+                Destroy(gameObject);
             }
         }
     }
