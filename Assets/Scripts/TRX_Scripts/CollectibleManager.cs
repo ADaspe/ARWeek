@@ -19,15 +19,10 @@ namespace Collectibles
         private Touch touch;
 
         public List<Collectible> collectiblePool;
-        private InventoryManager inventory;
+        public InventoryManager inventory;
 
         [Space(10f)]
         public UnityEvent onHold;
-
-        void Start()
-        {
-            inventory = GameObject.Find("Inventory Manager").GetComponent<InventoryManager>();
-        }
 
         void Update()
         {
