@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Particles et sprites.meta
 guid: 7d7ab19f2ab55cb48976e35022b7e614
+=======
+<<<<<<< Updated upstream
+guid: 8fcbf4bd5ca37424686e8da2db6b42aa
+=======
+guid: 552adf2a8d899d140bed6c6e35a8c082
+>>>>>>> Stashed changes
+>>>>>>> main:Assets/Prefab.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

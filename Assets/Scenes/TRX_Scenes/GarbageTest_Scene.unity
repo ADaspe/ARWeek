@@ -417,7 +417,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e8ccef648ee95d499af5c12103657dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryMaster: {fileID: 0}
+  inventoryMaster: {fileID: 11400000, guid: c18f4349c3a6a3e4cb33b77051d74334, type: 2}
   redString: Red
   greenString: Green
   blueString: Blue
@@ -725,6 +725,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1622856086}
   - component: {fileID: 1622856087}
+  - component: {fileID: 1622856088}
   m_Layer: 0
   m_Name: Bocal (3)
   m_TagString: Untagged
@@ -761,6 +762,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bocalIndex: 3
   currentIngredient: 1
+--- !u!95 &1622856088
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622856085}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 66e67e26e69f5f049be3ae5890ca3cb6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2027418266
 GameObject:
   m_ObjectHideFlags: 0
