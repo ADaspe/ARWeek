@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/StreamingAssets.meta
+guid: bc2a932c0b93d284896ec2abb246f708
+=======
 guid: d2cde830d774600409fcc721b9de4f3e
+>>>>>>> Pierre:Assets/3D Models.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
