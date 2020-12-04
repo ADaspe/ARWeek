@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ced9b37bf837764b9a9fd16e6efb2b7, type: 3}
   m_Name: Philtre d'amour
   m_EditorClassIdentifier: 
-  Ingredient: 0
   index: 0
   text: Philtre d'amour
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: 73816fa2efcbba048b768d6ebf9ae71c, type: 3}
   description: "Tr\xE8s rose"
   tempsDeLaRecette: 60
   listeIngredients: 030000000400000000000000

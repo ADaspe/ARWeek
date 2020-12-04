@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ced9b37bf837764b9a9fd16e6efb2b7, type: 3}
   m_Name: "Lumi\xE8re pure"
   m_EditorClassIdentifier: 
-  Ingredient: 0
   index: 0
   text: "Lumi\xE8re pure"
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: 1d29c1b0c245692459ff5bd31a2fc9ae, type: 3}
   description: N'oubliez pas les lunettes de soleil
   tempsDeLaRecette: 60
   listeIngredients: 050000000500000005000000
