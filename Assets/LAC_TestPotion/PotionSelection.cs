@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using InventorySystem;
+using PotionCreationSystem;
 
 public class PotionSelection : MonoBehaviour
 {
     public Inventory m_Inventory;
     public InventoryColor m_InventoryColor;
+    public GameObject potionTimer;
+    public PotionTimerUI uiTimer;
+
     public bool lockSelection;
 
     public int[] potionIndex = { 0, 0, 0 } ;
@@ -26,6 +30,9 @@ public class PotionSelection : MonoBehaviour
     public Light[] lightPotion;
     public GameObject[] blackSolid;
 
+    public PotionCreation m_PotionCreation;
+    public PotionBocaux[] potionsBocaux;
+
     private void Start()
     {
         potionQntyModifier = new int[m_InventoryColor.colorPotions.Length, potionIndex.Length];
@@ -41,6 +48,8 @@ public class PotionSelection : MonoBehaviour
             else
                 m_Button.onClick.AddListener(() => ColorSelectionR(vesselIndex));
         }
+        craftButton.onClick.AddListener(ApplyCraft);
+     
     }
 
     private void Update()
@@ -102,6 +111,7 @@ public class PotionSelection : MonoBehaviour
             int numberOfColor = m_InventoryColor.colorPotions.Length;
 
             potionIndex[vesselIndex]++;
+            potionIndex[vesselIndex] = (potionIndex[vesselIndex] < 0) ? numberOfColor - 1 : (potionIndex[vesselIndex]) % numberOfColor;
             int currentPotionQuantity = m_InventoryColor.colorPotions[potionIndex[vesselIndex]].quantity + totalQntyModifier[potionIndex[vesselIndex]];
             if (currentPotionQuantity < 0)
             {
@@ -120,6 +130,7 @@ public class PotionSelection : MonoBehaviour
             int numberOfColor = m_InventoryColor.colorPotions.Length;
 
             potionIndex[vesselIndex]--;
+            potionIndex[vesselIndex] = (potionIndex[vesselIndex] < 0) ? numberOfColor - 1 : (potionIndex[vesselIndex]) % numberOfColor;
             int currentPotionQuantity = m_InventoryColor.colorPotions[potionIndex[vesselIndex]].quantity + totalQntyModifier[potionIndex[vesselIndex]];
             if (currentPotionQuantity < 0)
             {
@@ -132,6 +143,47 @@ public class PotionSelection : MonoBehaviour
 
     public void ApplyCraft()
     {
+        Debug.Log("craft");
+        // setup potion bocaux
+        int numberOfColor = m_InventoryColor.colorPotions.Length;
+        for (int i = 0; i < potionsBocaux.Length; i++)
+        {
+            Potions.Ingredients currIngredient = Potions.Ingredients.EMPTY;
+            for (int c = 0; c < numberOfColor; c++)
+            {
+                if(potionQntyModifier[c,i] != 0)
+                {
+                    if (c == 1) currIngredient = Potions.Ingredients.RED;
+                    if (c == 2) currIngredient = Potions.Ingredients.BLUE;
+                    if (c == 3) currIngredient = Potions.Ingredients.GREEN;
+                    if (c == 4) currIngredient = Potions.Ingredients.PINK;
+                    if (c == 5) currIngredient = Potions.Ingredients.WHITE;
+                    if (c == 6) currIngredient = Potions.Ingredients.BLACK;
+                }
+            }
+            potionsBocaux[i].currentIngredient = currIngredient;
 
+        }
+
+        Potions potionToCraft = m_PotionCreation.WhichPotionToCraft();
+        print("La potion craftée : "+ potionToCraft.text);
+        uiTimer.SetPotion(potionToCraft);
+
+        // apply color quantity to inventory
+        m_Inventory.Red = finalColorQuantity[1];
+        m_Inventory.Blue = finalColorQuantity[2];
+        m_Inventory.Green = finalColorQuantity[3];
+        m_Inventory.Pink = finalColorQuantity[4];
+        m_Inventory.White = finalColorQuantity[5];
+        m_Inventory.Black = finalColorQuantity[6];
+
+        // reset bocaux
+        for (int i = 0; i < potionsBocaux.Length; i++)
+        {
+            //potionsBocaux[i].currentIngredient = Potions.Ingredients.EMPTY; 
+            //potionIndex[i] = 0;
+        }
+
+        //potionTimer.SetActive(true);
     }
 }

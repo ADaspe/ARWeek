@@ -21,7 +21,7 @@ namespace PotionCreationSystem
         // Start is called before the first frame update
         void Start()
         {
-            print("crafted : " + WhichPotionToCraft().text);
+            //print("crafted : " + WhichPotionToCraft().text);
         }
 
         // Update is called once per frame
@@ -33,10 +33,14 @@ namespace PotionCreationSystem
         //Fait le tour de la liste de potions disponibles pour déterminer s'il en existe une avec la combinaison actuelle
         public Potions  WhichPotionToCraft()
         {
+            print("Je passe ici");
+            print("Igrédient dans le bocal n° " + bocaux[0].bocalIndex + " = " + bocaux[0].currentIngredient);
+
             ingredientsAlikeCount = 0;
 
             foreach(Potions potion in listeDesPotions)
             {
+                print(potion.text);
                 foreach(Potions.Ingredients i in potion.listeIngredients)
                 {
                     ingredients.Add(i);
