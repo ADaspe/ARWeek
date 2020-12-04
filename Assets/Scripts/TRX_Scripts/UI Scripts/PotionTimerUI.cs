@@ -40,9 +40,9 @@ public class PotionTimerUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        startTimer = currentPotion.tempsDeLaRecette;
+        //startTimer = currentPotion.tempsDeLaRecette;
         startTime = Time.time;
-        UpdateGraphics();
+        //UpdateGraphics();
     }
 
     // Update is called once per frame
@@ -139,6 +139,7 @@ public class PotionTimerUI : MonoBehaviour
         currentPotion = potion;
         startTimer = potion.tempsDeLaRecette;
         timerComplete = false;
+        UpdateGraphics();
     }
 
 
