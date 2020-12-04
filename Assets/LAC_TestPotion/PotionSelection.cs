@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PotionSelection : MonoBehaviour
 {
     public InventoryColor m_InventoryColor;
+    public bool lockSelection;
 
     public int[] potionIndex = { 0, 0, 0 } ;
     public int[,] potionQntyModifier = new int[7,3];
@@ -21,6 +22,7 @@ public class PotionSelection : MonoBehaviour
     public Image[] m_Images;
 
     public Light[] lightPotion;
+    public GameObject[] blackSolid;
 
     private void Start()
     {
@@ -71,8 +73,11 @@ public class PotionSelection : MonoBehaviour
 
             // assign color
             Color colorToReturn = m_InventoryColor.colorPotions[potionIndex[v]].color;
+
             m_Images[v].color = colorToReturn;
             lightPotion[v].color = colorToReturn;
+
+            blackSolid[v].SetActive((colorToReturn == m_InventoryColor.colorPotions[6].color));
 
             // update quantity modifier
             
@@ -90,29 +95,37 @@ public class PotionSelection : MonoBehaviour
     }
     public void ColorSelectionL( int vesselIndex)
     {
-        int numberOfColor = m_InventoryColor.colorPotions.Length;
-
-        potionIndex[vesselIndex]++;
-        int currentPotionQuantity = m_InventoryColor.colorPotions[potionIndex[vesselIndex]].quantity + totalQntyModifier[potionIndex[vesselIndex]];
-        if (currentPotionQuantity < 0)
+        if (!lockSelection)
         {
+            int numberOfColor = m_InventoryColor.colorPotions.Length;
+
             potionIndex[vesselIndex]++;
-            // verify range index
-            potionIndex[vesselIndex] = (potionIndex[vesselIndex] < 0) ? numberOfColor - 1 : (potionIndex[vesselIndex]) % numberOfColor;
+            int currentPotionQuantity = m_InventoryColor.colorPotions[potionIndex[vesselIndex]].quantity + totalQntyModifier[potionIndex[vesselIndex]];
+            if (currentPotionQuantity < 0)
+            {
+                potionIndex[vesselIndex]++;
+                // verify range index
+                potionIndex[vesselIndex] = (potionIndex[vesselIndex] < 0) ? numberOfColor - 1 : (potionIndex[vesselIndex]) % numberOfColor;
+            }
         }
+       
     }
 
     public void ColorSelectionR(int vesselIndex)
     {
-        int numberOfColor = m_InventoryColor.colorPotions.Length;
-
-        potionIndex[vesselIndex]--;
-        int currentPotionQuantity = m_InventoryColor.colorPotions[potionIndex[vesselIndex]].quantity + totalQntyModifier[potionIndex[vesselIndex]];
-        if (currentPotionQuantity < 0)
+        if (!lockSelection)
         {
+            int numberOfColor = m_InventoryColor.colorPotions.Length;
+
             potionIndex[vesselIndex]--;
-            // verify range index
-            potionIndex[vesselIndex] = (potionIndex[vesselIndex] < 0) ? numberOfColor - 1 : (potionIndex[vesselIndex]) % numberOfColor;
+            int currentPotionQuantity = m_InventoryColor.colorPotions[potionIndex[vesselIndex]].quantity + totalQntyModifier[potionIndex[vesselIndex]];
+            if (currentPotionQuantity < 0)
+            {
+                potionIndex[vesselIndex]--;
+                // verify range index
+                potionIndex[vesselIndex] = (potionIndex[vesselIndex] < 0) ? numberOfColor - 1 : (potionIndex[vesselIndex]) % numberOfColor;
+            }
         }
+        
     }
 }
