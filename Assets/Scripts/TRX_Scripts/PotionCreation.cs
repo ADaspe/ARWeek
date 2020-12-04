@@ -8,6 +8,8 @@ namespace PotionCreationSystem
     public class PotionCreation : MonoBehaviour
     {
         public List<Potions> listeDesPotions;
+        [Space(10f)]
+        public Potions defaultPot;
         public PotionBocaux[] bocaux = new PotionBocaux[3];
 
         private int ingredientsAlikeCount;
@@ -31,6 +33,7 @@ namespace PotionCreationSystem
         //Fait le tour de la liste de potions disponibles pour déterminer s'il en existe une avec la combinaison actuelle
         public Potions  WhichPotionToCraft()
         {
+            ingredientsAlikeCount = 0;
 
             foreach(Potions potion in listeDesPotions)
             {
@@ -45,6 +48,7 @@ namespace PotionCreationSystem
                 {
                     return potionFound;
                 }
+
 
                 //Compare les ingrédients dans les bocaux à la potion actuelle
                 foreach (PotionBocaux bocal in bocaux)
@@ -64,11 +68,15 @@ namespace PotionCreationSystem
                 else
                 {
                     ingredientsAlikeCount = 0;
+
                 }
 
             }
 
-            return null;
+            if(potionFound == null) potionFound = defaultPot;
+
+
+            return potionFound;
         }
 
     }
