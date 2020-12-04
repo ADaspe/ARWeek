@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ced9b37bf837764b9a9fd16e6efb2b7, type: 3}
   m_Name: "Potion hallucinog\xE8ne"
   m_EditorClassIdentifier: 
-  Ingredient: 0
   index: 0
   text: "Potion hallucinog\xE8ne"
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: 83c12ffaa1dcd9a4fbdd3bedada82997, type: 3}
   description: "J'ai aucune id\xE9e de ce que j'ai fait hier soir "
   tempsDeLaRecette: 60
   listeIngredients: 020000000400000004000000

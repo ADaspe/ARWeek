@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ced9b37bf837764b9a9fd16e6efb2b7, type: 3}
   m_Name: Tisane Absolue
   m_EditorClassIdentifier: 
-  Ingredient: 0
   index: 0
   text: Tisane Absolue
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: c01d64ad49ff0ff45bbcdab591f36f3f, type: 3}
   description: A la fois goutue et rafraichissante
   tempsDeLaRecette: 60
   listeIngredients: 030000000100000002000000

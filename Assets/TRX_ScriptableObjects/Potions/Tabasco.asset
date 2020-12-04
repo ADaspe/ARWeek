@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ced9b37bf837764b9a9fd16e6efb2b7, type: 3}
   m_Name: Tabasco
   m_EditorClassIdentifier: 
-  Ingredient: 0
   index: 0
   text: Tabasco
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: 6c96802c6efe05b46a22c6fe52dc48b0, type: 3}
   description: Pour rajouter du piment dans sa vie
   tempsDeLaRecette: 60
   listeIngredients: 030000000300000003000000
