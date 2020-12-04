@@ -266,7 +266,7 @@ GameObject:
   - component: {fileID: 2788330675940947644}
   m_Layer: 0
   m_Name: Potion_Complete_UI
-  m_TagString: Untagged
+  m_TagString: PotionCreationUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
