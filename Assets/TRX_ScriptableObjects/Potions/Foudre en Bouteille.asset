@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ced9b37bf837764b9a9fd16e6efb2b7, type: 3}
   m_Name: Foudre en Bouteille
   m_EditorClassIdentifier: 
-  Ingredient: 0
   index: 0
   text: Foudre en Bouteille
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: eebbe60ffd2bd2b4ab4d43e3536d528b, type: 3}
   description: Je m'en sers pour alimenter le micro onde
   tempsDeLaRecette: 60
   listeIngredients: 010000000300000005000000

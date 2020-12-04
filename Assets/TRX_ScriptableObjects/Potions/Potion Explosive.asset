@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ced9b37bf837764b9a9fd16e6efb2b7, type: 3}
   m_Name: Potion Explosive
   m_EditorClassIdentifier: 
-  Ingredient: 0
   index: 0
   text: Potion Explosive
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: 2362ebb6b3d4e854eb8efaf593f20b71, type: 3}
   description: BOUM !
   tempsDeLaRecette: 60
   listeIngredients: 030000000300000000000000

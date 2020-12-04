@@ -8,15 +8,20 @@ using UnityEngine.XR.ARSubsystems;
 using Unity.Collections.LowLevel.Unsafe;
 using InventorySystem;
 using PotionCreationSystem;
+using Collectibles;
 
 public class CameraToTexture : MonoBehaviour
 {
     public ARCameraManager m_CameraManager;
     public RawImage m_RawCameraImage;
-    public float r, g, b;
+    public CollectibleSpawner collecSpawner;
+    private float r, g, b;
     Texture2D m_CameraTexture;
-    public Inventory invent;
-    public Color[] cols;
+    //public Inventory invent;
+    private Color[] cols;
+    private bool canSpawn;
+    public float timeToWait;
+    private float nextSpawn;
 
     void OnEnable()
     {
@@ -31,6 +36,17 @@ public class CameraToTexture : MonoBehaviour
         if (m_CameraManager != null)
         {
             m_CameraManager.frameReceived -= OnCameraFrameReceived;
+        }
+    }
+
+    private void Update()
+    {
+        if (!canSpawn)
+        {
+            if(Time.time >= nextSpawn)
+            {
+                canSpawn = true;
+            }
         }
     }
     void OnCameraFrameReceived(ARCameraFrameEventArgs eventArgs)
@@ -84,14 +100,20 @@ public class CameraToTexture : MonoBehaviour
         
         if(Input.touchCount>0 && Input.touches[0].phase == TouchPhase.Began)
         {
-            cols = m_CameraTexture.GetPixels((m_CameraTexture.width / 2)-80, (m_CameraTexture.height / 2)-80, 160, 160);
-            Color col = Color.black;
-            for(int i = 0; i < cols.Length; i++)
+            if (canSpawn)
             {
-                col += cols[i];
+                canSpawn = false;
+                nextSpawn = Time.time + timeToWait;
+                cols = m_CameraTexture.GetPixels((m_CameraTexture.width / 2) - 80, (m_CameraTexture.height / 2) - 80, 160, 160);
+                Color col = Color.black;
+                for (int i = 0; i < cols.Length; i++)
+                {
+                    col += cols[i];
+                }
+                col /= cols.Length;
+
+                ConvertColor(col);
             }
-            col /= cols.Length;
-            ConvertColor(col);
         }
     }
 
@@ -100,28 +122,35 @@ public class CameraToTexture : MonoBehaviour
         
         float h, s, v;
         Color.RGBToHSV(col,out h,out s,out v);
-        h = Mathf.RoundToInt(h) * 360;
-        s = Mathf.RoundToInt(s) * 100;
-        v = Mathf.RoundToInt(v) * 100;
+        h = Mathf.RoundToInt(h*360);
+        s = Mathf.RoundToInt(s*100);
+        v = Mathf.RoundToInt(v*100);
         Debug.Log("H: " + h + " S: " + s + " V: " + v);
         if ((h<=60 || h >= 340) && v >= 60 && s >=40)
         {
+            collecSpawner.SpawnCollectibleOfColor(Potions.Ingredients.RED);
             Debug.Log("Red");
         }else if ((h >=155 && h <= 240) && v >= 10 && s >= 60)
         {
+            collecSpawner.SpawnCollectibleOfColor(Potions.Ingredients.BLUE);
             Debug.Log("Blue");
         }else if ((h>60 && h<170) && v >= 10 && s >= 20)
         {
+            collecSpawner.SpawnCollectibleOfColor(Potions.Ingredients.GREEN);
+
             Debug.Log("Green");
         }else if ((h > 255 || h<50) && v >= 35 && s > 20)
         {
+            collecSpawner.SpawnCollectibleOfColor(Potions.Ingredients.PINK);
             Debug.Log("Pink");
         }
         else if(v < 60)
         {
+            collecSpawner.SpawnCollectibleOfColor(Potions.Ingredients.BLACK);
             Debug.Log("Black");
         }else if (s < 20 && v >= 60)
         {
+            collecSpawner.SpawnCollectibleOfColor(Potions.Ingredients.WHITE);
             Debug.Log("White");
         }
                 

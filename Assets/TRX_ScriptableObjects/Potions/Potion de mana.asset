@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ced9b37bf837764b9a9fd16e6efb2b7, type: 3}
   m_Name: Potion de mana
   m_EditorClassIdentifier: 
-  Ingredient: 0
   index: 0
   text: Potion de mana
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: f66edf72caf55f3499be73998cf43de8, type: 3}
   description: Ultimate powaaaa
   tempsDeLaRecette: 60
   listeIngredients: 010000000400000000000000

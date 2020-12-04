@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3531664680457973895
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 43403281489223863}
+  - component: {fileID: 5879150733919165260}
+  - component: {fileID: 6154681938098017631}
+  m_Layer: 0
+  m_Name: CollectibleManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &43403281489223863
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3531664680457973895}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5879150733919165260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3531664680457973895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3801599a81a5a554b9555707dd384d63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 1
+  holdTime: 0.8
+  lifetime: 5
+  collectiblePool: []
+  onHold:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &6154681938098017631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3531664680457973895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bb7de073be329c4e9df3658147e636c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnDelay: 0.33
+  maxCollectibles: 8
+  debug: 1
+  baseLocation: {x: 0, y: 0, z: 0}
+  redColl: {fileID: 741610437402512770, guid: 22caabdb532998b4b963889a80013d9e, type: 3}
+  blueColl: {fileID: 5029706908259751672, guid: 5ae5882129d5f37479a2ee2ad9d17183,
+    type: 3}
+  greenColl: {fileID: 1145277478942807958, guid: 2e7d6af8d9b9d6441b8fd64263cba306,
+    type: 3}
+  pinkColl: {fileID: 4490545844117344197, guid: 34e468c752d9794408c83493d8dbb526,
+    type: 3}
+  blackColl: {fileID: 3050097991885861274, guid: 5c64bd25fcceb5546ba6bf2ea52981d6,
+    type: 3}
+  whiteColl: {fileID: 1648265178521093400, guid: b97f8135082fb1647b6ac3bba06d11d3,
+    type: 3}

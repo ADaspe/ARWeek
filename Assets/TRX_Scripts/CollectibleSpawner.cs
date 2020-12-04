@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using PotionCreationSystem;
 using InventorySystem;
+using UnityEngine.XR.ARFoundation;
+using UnityEngine.XR.ARSubsystems;
 
 
 namespace Collectibles
@@ -17,9 +19,11 @@ namespace Collectibles
         [Tooltip("Max nbr of Collectibles spawned at the same time")]
         public int maxCollectibles = 8;
         public bool debug = true;
-        public Vector3 baseLocation;
+        public float profondeur = 30f;
+        public ARSessionOrigin ARSessionOrigin;
+        public Camera ARCamera;
 
-        private Vector3 newLocation;
+        private Transform newLocation;
 
 
         private int collCount;
@@ -103,18 +107,28 @@ namespace Collectibles
 
         private void CollectibleSpawn(GameObject toSpawn)
         {
-            collSpawned = Instantiate(toSpawn, SpawnLocation(), Quaternion.identity);
+            //Transform spawn = SpawnLocation();
+            /*GameObject go2 = Instantiate(toSpawn) as GameObject;
+            go2.transform.position = Camera.main.transform.position + Camera.main.transform.forward * 1f;*/
+            collSpawned = Instantiate(toSpawn);
+            collSpawned.transform.position = Camera.main.transform.position + Camera.main.transform.forward * 200f + new Vector3(Random.Range(-10, 10), Random.Range(-10, 10), profondeur);
+            //ARSessionOrigin.MakeContentAppearAt(collSpawned.transform, spawn.position);
+            //Demander à Alexis comment on fait pour faire spawner un truc en face de la caméra
             if (debug) print("Collectible Spawned !");
             collManagerScript.collectiblePool.Add(collSpawned);
             collCount++;
         }
-        private Vector3 SpawnLocation()
+        /*private Transform SpawnLocation()
         {
-            if (debug) print("Randomisation de la Localisation...");
-            newLocation = baseLocation;
-            newLocation += new Vector3(Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f));
+            
+            if (debug) print("Randomisation de la Localisation..."); 
+            Debug.Log(ARCamera.transform.position + ARCamera.transform.forward * 2f);
+            newLocation.position = ARCamera.transform.position + ARCamera.transform.forward * 2f;
+            Debug.Log("ça marche ici ?");
+            newLocation.position += new Vector3(Random.Range(-10, 10), Random.Range(-10, 10), profondeur);
+            Debug.Log("X : " + newLocation.position.x + " Y : " + newLocation.position.y + " Z : " + newLocation.position.z);
             return newLocation;
-        }
+        }*/
 
     }
 

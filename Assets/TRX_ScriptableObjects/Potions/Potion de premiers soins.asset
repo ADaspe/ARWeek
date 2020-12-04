@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ced9b37bf837764b9a9fd16e6efb2b7, type: 3}
   m_Name: Potion de premiers soins
   m_EditorClassIdentifier: 
-  Ingredient: 0
   index: 0
   text: Potion de premiers soins
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: e8aed37d09a308642a91494d2f1bdc43, type: 3}
   description: Soigne les petits bobos mieux qu'un bisou magique
   tempsDeLaRecette: 60
   listeIngredients: 020000000200000000000000
