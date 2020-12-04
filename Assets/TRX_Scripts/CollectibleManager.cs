@@ -18,13 +18,11 @@ namespace Collectibles
         private int lifetimeTimer = 0;*/
         private Touch touch;
 
-        public List<GameObject> collectiblePool;
+        public List<Collectible> collectiblePool;
         private InventoryManager inventory;
 
         [Space(10f)]
         public UnityEvent onHold;
-
-        private List<GameObject> collectiblesToDelete = new List<GameObject>();
 
         void Start()
         {
@@ -50,6 +48,7 @@ namespace Collectibles
                 touch = Input.GetTouch(0);
                 if (touch.phase == TouchPhase.Stationary)
                 {
+                    CameraToTexture.canSpawn = false;
                     holdTimer += Time.deltaTime;
                 }
 
@@ -62,6 +61,7 @@ namespace Collectibles
                 if (touch.phase == TouchPhase.Ended)
                 {
                     holdTimer = 0;
+                    CameraToTexture.canSpawn = true;
                 }
             }
         }
@@ -70,19 +70,22 @@ namespace Collectibles
         public void HoldTap()
         {
             if (onHold != null) onHold.Invoke();
-            foreach(GameObject collectible in collectiblePool)
+            foreach(Collectible collectible in collectiblePool)
             {
                 //Ajoute 1 à l'inventaire
-                inventory.AddRessources(collectible.GetComponent<Collectible>().couleur, 1);
-
-                //Ajoute le collectible à la liste des objets à delete
-                collectiblesToDelete.Add(collectible);
+                if (inventory.AddRessources(collectible.couleur, 1))
+                {
+                    //si c'est possible, supprime le machin qu'on récupère
+                    collectiblePool.Remove(collectible);
+                    Destroy(collectible.gameObject);
+                }
                 
             }
+            Debug.Log("Total fioles : "+ (inventory.inventoryMaster.Green+ inventory.inventoryMaster.Red+ inventory.inventoryMaster.Pink+ inventory.inventoryMaster.White+ inventory.inventoryMaster.Black+ inventory.inventoryMaster.Blue));
             if (debug) Debug.Log("Les cristaux ont été ramassés !");
         }
         
-        private void UpdateCollectibleList()
+        /*private void UpdateCollectibleList()
         {
             foreach (GameObject collectible in new List<GameObject>(collectiblePool))
             {
@@ -94,7 +97,7 @@ namespace Collectibles
             }
 
             collectiblePool.RemoveAll(collectible => collectiblesToDelete.Contains(collectible));
-        }
+        }*/
 
         /*private void CollectiblesLifetime()
         {

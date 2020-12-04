@@ -23,46 +23,45 @@ namespace InventorySystem
         
         //public UnityEvent addRessources;
 
-        // Start is called before the first frame update
-        void Start()
+
+        public bool AddRessources(Potions.Ingredients couleur, int nbr)
         {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
-
-        public void AddRessources(Potions.Ingredients couleur, int nbr)
-        {
-            if(couleur == Potions.Ingredients.RED)
+            Debug.Log("Nbr : " + nbr);
+            if (inventoryMaster.canAddColor(nbr))
             {
-                inventoryMaster.Red += nbr;
+                if (couleur == Potions.Ingredients.RED)
+                {
+                    inventoryMaster.Red += nbr;
+                }
+                if (couleur == Potions.Ingredients.GREEN)
+                {
+                    inventoryMaster.Green += nbr;
+                }
+                if (couleur == Potions.Ingredients.BLUE)
+                {
+                    inventoryMaster.Blue += nbr;
+                }
+                if (couleur == Potions.Ingredients.BLACK)
+                {
+                    inventoryMaster.Black += nbr;
+                }
+                if (couleur == Potions.Ingredients.WHITE)
+                {
+                    inventoryMaster.White += nbr;
+                }
+                if (couleur == Potions.Ingredients.PINK)
+                {
+                    inventoryMaster.Pink += nbr;
+                }
+                if (debug) print("Ressources " + couleur + " ajoutée !");
+                return true;
             }
-            if (couleur == Potions.Ingredients.GREEN)
+            else
             {
-                inventoryMaster.Green += nbr;
+                if (debug) print("Plus de place !");
+                return false;
             }
-            if (couleur == Potions.Ingredients.BLUE)
-            {
-                inventoryMaster.Blue += nbr;
-            }
-            if (couleur == Potions.Ingredients.BLACK)
-            {
-                inventoryMaster.Black += nbr;
-            }
-            if (couleur == Potions.Ingredients.WHITE)
-            {
-                inventoryMaster.White += nbr;
-            }
-            if (couleur == Potions.Ingredients.PINK)
-            {
-                inventoryMaster.Pink += nbr;
-            }
-
-            if (debug) print("Ressources " + couleur + " ajoutée !");
+            
         }
 
         public void SubRessources(Potions.Ingredients couleur, int nbr)

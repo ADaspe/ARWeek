@@ -19,7 +19,7 @@ public class CameraToTexture : MonoBehaviour
     Texture2D m_CameraTexture;
     //public Inventory invent;
     private Color[] cols;
-    private bool canSpawn;
+    public static bool canSpawn;
     public float timeToWait;
     private float nextSpawn;
 
@@ -98,7 +98,7 @@ public class CameraToTexture : MonoBehaviour
 
         // Set the RawImage's texture so we can visualize it.
         
-        if(Input.touchCount>0 && Input.touches[0].phase == TouchPhase.Began)
+        if(Input.touchCount>0 && Input.touches[0].phase == TouchPhase.Ended)
         {
             if (canSpawn)
             {
