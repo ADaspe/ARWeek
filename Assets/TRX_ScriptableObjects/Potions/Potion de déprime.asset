@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ced9b37bf837764b9a9fd16e6efb2b7, type: 3}
   m_Name: "Potion de d\xE9prime"
   m_EditorClassIdentifier: 
-  Ingredient: 0
   index: 0
   text: "Potion de d\xE9prime"
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: b84b13ebc753d5f4ebd4be71b48a43c7, type: 3}
   description: "Pourquoi quelqu'un irait boire \xE7a !?"
   tempsDeLaRecette: 60
   listeIngredients: 010000000600000000000000

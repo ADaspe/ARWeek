@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ced9b37bf837764b9a9fd16e6efb2b7, type: 3}
   m_Name: "Potion de r\xE9surrection"
   m_EditorClassIdentifier: 
-  Ingredient: 0
   index: 0
   text: "Potion de r\xE9surrection"
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: a1bfa1faa5d70704d983e629080e3d45, type: 3}
   description: "Un secret bien gard\xE9"
   tempsDeLaRecette: 60
   listeIngredients: 040000000500000005000000
