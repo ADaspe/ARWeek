@@ -112,7 +112,7 @@ namespace Collectibles
             //ARSessionOrigin.MakeContentAppearAt(collSpawned.transform, spawn.position);
             //Demander à Alexis comment on fait pour faire spawner un truc en face de la caméra
             if (debug) print("Collectible Spawned !");
-            collManagerScript.collectiblePool.Add(collSpawned);
+            //collManagerScript.collectiblePool.Add(collSpawned);
         }
         /*private Transform SpawnLocation()
         {
