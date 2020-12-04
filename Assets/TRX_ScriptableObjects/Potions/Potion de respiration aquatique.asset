@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ced9b37bf837764b9a9fd16e6efb2b7, type: 3}
   m_Name: Potion de respiration aquatique
   m_EditorClassIdentifier: 
-  Ingredient: 0
   index: 0
   text: Potion de respiration aquatique
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: 9daec4e42c2d979418629bad4032b3f4, type: 3}
   description: Nageoires non-incluses
   tempsDeLaRecette: 60
   listeIngredients: 010000000200000000000000

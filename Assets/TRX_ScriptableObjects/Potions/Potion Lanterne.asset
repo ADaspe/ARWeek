@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ced9b37bf837764b9a9fd16e6efb2b7, type: 3}
   m_Name: Potion Lanterne
   m_EditorClassIdentifier: 
-  Ingredient: 0
   index: 0
   text: Potion lanterne
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: cfbacb47c22c38f46a1147235dfb0b45, type: 3}
   description: "Pour \xE9clairer les nuits les plus sombres"
   tempsDeLaRecette: 60
   listeIngredients: 030000000300000005000000
