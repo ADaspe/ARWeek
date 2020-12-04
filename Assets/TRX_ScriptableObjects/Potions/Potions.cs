@@ -19,6 +19,7 @@ namespace PotionCreationSystem
         public string description;
         [Range(0f, 300f)]
         public float tempsDeLaRecette = 60f;
+        public bool isCrafted;
 
         [Header("Ingrédients")]
         public List<Ingredients> listeIngredients;

@@ -33,5 +33,5 @@ MonoBehaviour:
       m_GuidHigh: 17543411055008666747
     m_Size: {x: 0.1, y: 0.1}
     m_SpecifySize: 1
-    m_Name: vessel
+    m_Name: flask
     m_Texture: {fileID: 0}

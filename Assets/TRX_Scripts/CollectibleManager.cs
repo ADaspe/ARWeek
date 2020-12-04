@@ -16,6 +16,7 @@ namespace Collectibles
         /*[Range(1f, 6f)]
         public float lifetime = 5f;
         private int lifetimeTimer = 0;*/
+        private Touch touch;
 
         public List<GameObject> collectiblePool;
         private InventoryManager inventory;
@@ -36,7 +37,7 @@ namespace Collectibles
             //UpdateCollectibleList();
 
             //InputCheck si le joueur Hold Tap
-            //HoldTimerIncrement();
+            HoldTimerIncrement();
 
             //CollectiblesLifetime();
 
@@ -44,22 +45,25 @@ namespace Collectibles
 
         private void HoldTimerIncrement()
         {
-            if(Input.touchCount>0)
+            if (Input.touchCount > 0)
             {
-                holdTimer += Input.GetTouch(0).deltaTime;
-            }
+                touch = Input.GetTouch(0);
+                if (touch.phase == TouchPhase.Stationary)
+                {
+                    holdTimer += Time.deltaTime;
+                }
 
-            if (holdTimer >= holdTime)
-            {
-                //Se déclenche quand le joueur à effectué un HoldTap
-                HoldTap();
-            }
+                if (holdTimer >= holdTime)
+                {
+                    //Se déclenche quand le joueur à effectué un HoldTap
+                    HoldTap();
+                }
 
-            if (Input.GetTouch(0).phase == TouchPhase.Ended)
-        {
-                holdTimer = 0;
+                if (touch.phase == TouchPhase.Ended)
+                {
+                    holdTimer = 0;
+                }
             }
-
         }
 
         //Invoke l'evenement onHold
@@ -73,9 +77,8 @@ namespace Collectibles
 
                 //Ajoute le collectible à la liste des objets à delete
                 collectiblesToDelete.Add(collectible);
+                
             }
-
-
             if (debug) Debug.Log("Les cristaux ont été ramassés !");
         }
         
