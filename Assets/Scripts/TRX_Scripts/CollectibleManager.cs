@@ -13,9 +13,6 @@ namespace Collectibles
         [Range(0.8f, 3f)]
         public float holdTime = 0.8f;
         private float holdTimer = 0f;
-        /*[Range(1f, 6f)]
-        public float lifetime = 5f;
-        private int lifetimeTimer = 0;*/
 
         public List<GameObject> collectiblePool;
         private InventoryManager inventory;
