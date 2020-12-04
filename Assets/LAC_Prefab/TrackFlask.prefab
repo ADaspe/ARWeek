@@ -943,7 +943,7 @@ GameObject:
   m_Layer: 0
   m_Name: TrackFlask
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1534,7 +1534,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6374850115541135976}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -13.9}
+  m_LocalPosition: {x: 0, y: 0, z: -13.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8463738785171873848}
@@ -1546,7 +1546,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -2, y: 17.2}
+  m_AnchoredPosition: {x: -1.2, y: 18.3}
   m_SizeDelta: {x: 37.629036, y: 38.19232}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &2530608495188020669
@@ -1660,14 +1660,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82f86085d91008f44af8dd331afe7cc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Inventory: {fileID: 0}
+  m_Inventory: {fileID: 11400000, guid: c18f4349c3a6a3e4cb33b77051d74334, type: 2}
   m_InventoryColor: {fileID: 7387908408965637548}
   lockSelection: 0
   potionIndex: 000000000000000000000000
   totalQntyModifier: 00000000000000000000000000000000000000000000000000000000
   finalColorQuantity: 00000000000000000000000000000000000000000000000000000000
   craftButton: {fileID: 5178425091884698841}
-  selectButton: []
+  selectButton:
+  - {fileID: 6915667701540305526}
+  - {fileID: 8445357212780944976}
+  - {fileID: 8891295734697304938}
+  - {fileID: 5360140778428716328}
+  - {fileID: 3927481283724506326}
+  - {fileID: 9035854623366550428}
   m_Images:
   - {fileID: 9058222546588506117}
   - {fileID: 3371663917555672547}
@@ -2196,7 +2202,7 @@ PrefabInstance:
     - target: {fileID: 2393673673133451122, guid: 4867ab41163312a4ea1ae5b1833b1fd5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.2
+      value: -10.9
       objectReference: {fileID: 0}
     - target: {fileID: 2393673673133451122, guid: 4867ab41163312a4ea1ae5b1833b1fd5,
         type: 3}
@@ -2206,7 +2212,7 @@ PrefabInstance:
     - target: {fileID: 2393673673133451122, guid: 4867ab41163312a4ea1ae5b1833b1fd5,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.1
+      value: -16.3
       objectReference: {fileID: 0}
     - target: {fileID: 2393673673133451122, guid: 4867ab41163312a4ea1ae5b1833b1fd5,
         type: 3}

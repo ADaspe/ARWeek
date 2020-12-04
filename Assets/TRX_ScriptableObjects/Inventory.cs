@@ -18,5 +18,17 @@ namespace InventorySystem
         [Header("Fioles")]
         public int maxFioles = 10;
 
+
+        public bool canAddColor(int nbr)
+        {
+            if(Red+Pink+Green+Blue+Black+White+nbr <= maxFioles)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
