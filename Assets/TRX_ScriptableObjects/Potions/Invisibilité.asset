@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ced9b37bf837764b9a9fd16e6efb2b7, type: 3}
   m_Name: "Invisibilit\xE9"
   m_EditorClassIdentifier: 
-  Ingredient: 0
   index: 0
   text: "Nasse d'invisibilit\xE9"
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: 4a57d9e898d7c4148a04ac2a9ce3ecde, type: 3}
   description: "Surveillez la bien, elle a tendance \xE0 disparaitre"
   tempsDeLaRecette: 60
   listeIngredients: 010000000400000006000000

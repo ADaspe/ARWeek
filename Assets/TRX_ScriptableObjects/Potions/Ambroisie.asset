@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ced9b37bf837764b9a9fd16e6efb2b7, type: 3}
   m_Name: Ambroisie
   m_EditorClassIdentifier: 
-  Ingredient: 0
   index: 0
   text: Ambroisie
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: 0d4e7c2ecbe8cf848962b2ef1cdfa97d, type: 3}
   description: "La nourriture des Dieux... trop sucr\xE9e \xE0 mon g\xF4ut..."
   tempsDeLaRecette: 60
   listeIngredients: 020000000200000005000000

@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ced9b37bf837764b9a9fd16e6efb2b7, type: 3}
   m_Name: "Temp\xEAte en bouteille"
   m_EditorClassIdentifier: 
-  Ingredient: 0
   index: 0
   text: "Temp\xEAte en bouteille"
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: 9cadbd0f08339f541a2ca6fbb5fd2698, type: 3}
   description: "Tr\xE8s efficace contre les importuns "
   tempsDeLaRecette: 60
   listeIngredients: 010000000100000006000000
