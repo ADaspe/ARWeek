@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 77bd0a76d79da0547a3b10818d88f758
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - inventoryMaster: {fileID: 11400000, guid: c18f4349c3a6a3e4cb33b77051d74334, type: 2}
+  - redNbrField: {instanceID: 0}
+  - greenNbrField: {instanceID: 0}
+  - blueNbrField: {instanceID: 0}
+  - pinkNbrField: {instanceID: 0}
+  - whiteNbrField: {instanceID: 0}
+  - blackNbrField: {instanceID: 0}
+  - fiolesField: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

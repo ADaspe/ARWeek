@@ -22,13 +22,13 @@ public class TurnPage : MonoBehaviour
         }
     }
 
-    void Next()
+    public void Next()
     {
         nextPage.SetActive(true);
         this.gameObject.SetActive(false);
     }
 
-    void Previous()
+    public void Previous()
     {
         previousPage.SetActive(true);
         this.gameObject.SetActive(false);

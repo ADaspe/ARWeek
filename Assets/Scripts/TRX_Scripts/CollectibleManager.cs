@@ -13,14 +13,16 @@ namespace Collectibles
         [Range(0.8f, 3f)]
         public float holdTime = 0.8f;
         private float holdTimer = 0f;
+        /*[Range(1f, 6f)]
+        public float lifetime = 5f;
+        private int lifetimeTimer = 0;*/
+        private Touch touch;
 
-        public List<GameObject> collectiblePool;
+        public List<Collectible> collectiblePool;
         private InventoryManager inventory;
 
         [Space(10f)]
         public UnityEvent onHold;
-
-        private List<GameObject> collectiblesToDelete = new List<GameObject>();
 
         void Start()
         {
@@ -33,7 +35,7 @@ namespace Collectibles
             //UpdateCollectibleList();
 
             //InputCheck si le joueur Hold Tap
-            //HoldTimerIncrement();
+            HoldTimerIncrement();
 
             //CollectiblesLifetime();
 
@@ -41,42 +43,49 @@ namespace Collectibles
 
         private void HoldTimerIncrement()
         {
-            if(Input.touchCount>0)
+            if (Input.touchCount > 0)
             {
-                holdTimer += Input.GetTouch(0).deltaTime;
-            }
+                touch = Input.GetTouch(0);
+                if (touch.phase == TouchPhase.Stationary)
+                {
+                    CameraToTexture.canSpawn = false;
+                    holdTimer += Time.deltaTime;
+                }
 
-            if (holdTimer >= holdTime)
-            {
-                //Se déclenche quand le joueur à effectué un HoldTap
-                HoldTap();
-            }
+                if (holdTimer >= holdTime)
+                {
+                    //Se déclenche quand le joueur à effectué un HoldTap
+                    HoldTap();
+                }
 
-            if (Input.GetTouch(0).phase == TouchPhase.Ended)
-        {
-                holdTimer = 0;
+                if (touch.phase == TouchPhase.Ended)
+                {
+                    holdTimer = 0;
+                    CameraToTexture.canSpawn = true;
+                }
             }
-
         }
 
         //Invoke l'evenement onHold
         public void HoldTap()
         {
             if (onHold != null) onHold.Invoke();
-            foreach(GameObject collectible in collectiblePool)
+            foreach (Collectible collectible in collectiblePool)
             {
                 //Ajoute 1 à l'inventaire
-                inventory.AddRessources(collectible.GetComponent<Collectible>().couleur, 1);
+                if (inventory.AddRessources(collectible.couleur, 1))
+                {
+                    //si c'est possible, supprime le machin qu'on récupère
+                    collectiblePool.Remove(collectible);
+                    Destroy(collectible.gameObject);
+                }
 
-                //Ajoute le collectible à la liste des objets à delete
-                collectiblesToDelete.Add(collectible);
             }
-
-
+            Debug.Log("Total fioles : " + (inventory.inventoryMaster.Green + inventory.inventoryMaster.Red + inventory.inventoryMaster.Pink + inventory.inventoryMaster.White + inventory.inventoryMaster.Black + inventory.inventoryMaster.Blue));
             if (debug) Debug.Log("Les cristaux ont été ramassés !");
         }
-        
-        private void UpdateCollectibleList()
+
+        /*private void UpdateCollectibleList()
         {
             foreach (GameObject collectible in new List<GameObject>(collectiblePool))
             {
@@ -88,7 +97,7 @@ namespace Collectibles
             }
 
             collectiblePool.RemoveAll(collectible => collectiblesToDelete.Contains(collectible));
-        }
+        }*/
 
         /*private void CollectiblesLifetime()
         {

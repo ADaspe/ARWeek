@@ -25,19 +25,16 @@ namespace Collectibles
 
         private Transform newLocation;
 
-
-        private int collCount;
-
         [Header("Collectibles")]
-        public GameObject redColl;
-        public GameObject blueColl;
-        public GameObject greenColl;
-        public GameObject pinkColl;
-        public GameObject blackColl;
-        public GameObject whiteColl;
+        public Collectible redColl;
+        public Collectible blueColl;
+        public Collectible greenColl;
+        public Collectible pinkColl;
+        public Collectible blackColl;
+        public Collectible whiteColl;
 
-        private GameObject collToSpawn;
-        private GameObject collSpawned;
+        private Collectible collToSpawn;
+        private Collectible collSpawned;
         private CollectibleManager collManagerScript;
 
         private void Start()
@@ -105,7 +102,7 @@ namespace Collectibles
 
         }
 
-        private void CollectibleSpawn(GameObject toSpawn)
+        private void CollectibleSpawn(Collectible toSpawn)
         {
             //Transform spawn = SpawnLocation();
             /*GameObject go2 = Instantiate(toSpawn) as GameObject;
@@ -115,8 +112,7 @@ namespace Collectibles
             //ARSessionOrigin.MakeContentAppearAt(collSpawned.transform, spawn.position);
             //Demander à Alexis comment on fait pour faire spawner un truc en face de la caméra
             if (debug) print("Collectible Spawned !");
-            collManagerScript.collectiblePool.Add(collSpawned);
-            collCount++;
+            //collManagerScript.collectiblePool.Add(collSpawned);
         }
         /*private Transform SpawnLocation()
         {
