@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using InventorySystem;
 
 public class PotionSelection : MonoBehaviour
 {
+    public Inventory m_Inventory;
     public InventoryColor m_InventoryColor;
     public bool lockSelection;
 
@@ -14,11 +16,11 @@ public class PotionSelection : MonoBehaviour
     int[] totalQntyModifier = new int[7];
     [SerializeField]
     int[] finalColorQuantity = new int[7];
-    
+
 
     //public Color colorToReturn = Color.clear;
-
-    public Button[] m_Buttons;
+    public Button craftButton;
+    public Button[] selectButton;
     public Image[] m_Images;
 
     public Light[] lightPotion;
@@ -29,9 +31,9 @@ public class PotionSelection : MonoBehaviour
         potionQntyModifier = new int[m_InventoryColor.colorPotions.Length, potionIndex.Length];
         totalQntyModifier = new int[m_InventoryColor.colorPotions.Length];
 
-        for(int b = 0; b < m_Buttons.Length; b++)
+        for(int b = 0; b < selectButton.Length; b++)
         {
-            Button m_Button = m_Buttons[b];
+            Button m_Button = selectButton[b];
             int vesselIndex = (int)(b/2);
 
             if(b%2 == 0)
@@ -126,6 +128,10 @@ public class PotionSelection : MonoBehaviour
                 potionIndex[vesselIndex] = (potionIndex[vesselIndex] < 0) ? numberOfColor - 1 : (potionIndex[vesselIndex]) % numberOfColor;
             }
         }
-        
+    }
+
+    public void ApplyCraft()
+    {
+
     }
 }
