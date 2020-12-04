@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using InventorySystem;
 
 public class PotionSelection : MonoBehaviour
 {
+    public Inventory m_Inventory;
     public InventoryColor m_InventoryColor;
+    public bool lockSelection;
 
     public int[] potionIndex = { 0, 0, 0 } ;
     public int[,] potionQntyModifier = new int[7,3];
@@ -13,21 +16,24 @@ public class PotionSelection : MonoBehaviour
     int[] totalQntyModifier = new int[7];
     [SerializeField]
     int[] finalColorQuantity = new int[7];
-    
+
 
     //public Color colorToReturn = Color.clear;
-
-    public Button[] m_Buttons;
+    public Button craftButton;
+    public Button[] selectButton;
     public Image[] m_Images;
+
+    public Light[] lightPotion;
+    public GameObject[] blackSolid;
 
     private void Start()
     {
         potionQntyModifier = new int[m_InventoryColor.colorPotions.Length, potionIndex.Length];
         totalQntyModifier = new int[m_InventoryColor.colorPotions.Length];
 
-        for(int b = 0; b < m_Buttons.Length; b++)
+        for(int b = 0; b < selectButton.Length; b++)
         {
-            Button m_Button = m_Buttons[b];
+            Button m_Button = selectButton[b];
             int vesselIndex = (int)(b/2);
 
             if(b%2 == 0)
@@ -69,7 +75,11 @@ public class PotionSelection : MonoBehaviour
 
             // assign color
             Color colorToReturn = m_InventoryColor.colorPotions[potionIndex[v]].color;
+
             m_Images[v].color = colorToReturn;
+            lightPotion[v].color = colorToReturn;
+
+            blackSolid[v].SetActive((colorToReturn == m_InventoryColor.colorPotions[6].color));
 
             // update quantity modifier
             
@@ -87,29 +97,41 @@ public class PotionSelection : MonoBehaviour
     }
     public void ColorSelectionL( int vesselIndex)
     {
-        int numberOfColor = m_InventoryColor.colorPotions.Length;
-
-        potionIndex[vesselIndex]++;
-        int currentPotionQuantity = m_InventoryColor.colorPotions[potionIndex[vesselIndex]].quantity + totalQntyModifier[potionIndex[vesselIndex]];
-        if (currentPotionQuantity < 0)
+        if (!lockSelection)
         {
+            int numberOfColor = m_InventoryColor.colorPotions.Length;
+
             potionIndex[vesselIndex]++;
-            // verify range index
-            potionIndex[vesselIndex] = (potionIndex[vesselIndex] < 0) ? numberOfColor - 1 : (potionIndex[vesselIndex]) % numberOfColor;
+            int currentPotionQuantity = m_InventoryColor.colorPotions[potionIndex[vesselIndex]].quantity + totalQntyModifier[potionIndex[vesselIndex]];
+            if (currentPotionQuantity < 0)
+            {
+                potionIndex[vesselIndex]++;
+                // verify range index
+                potionIndex[vesselIndex] = (potionIndex[vesselIndex] < 0) ? numberOfColor - 1 : (potionIndex[vesselIndex]) % numberOfColor;
+            }
         }
+       
     }
 
     public void ColorSelectionR(int vesselIndex)
     {
-        int numberOfColor = m_InventoryColor.colorPotions.Length;
-
-        potionIndex[vesselIndex]--;
-        int currentPotionQuantity = m_InventoryColor.colorPotions[potionIndex[vesselIndex]].quantity + totalQntyModifier[potionIndex[vesselIndex]];
-        if (currentPotionQuantity < 0)
+        if (!lockSelection)
         {
+            int numberOfColor = m_InventoryColor.colorPotions.Length;
+
             potionIndex[vesselIndex]--;
-            // verify range index
-            potionIndex[vesselIndex] = (potionIndex[vesselIndex] < 0) ? numberOfColor - 1 : (potionIndex[vesselIndex]) % numberOfColor;
+            int currentPotionQuantity = m_InventoryColor.colorPotions[potionIndex[vesselIndex]].quantity + totalQntyModifier[potionIndex[vesselIndex]];
+            if (currentPotionQuantity < 0)
+            {
+                potionIndex[vesselIndex]--;
+                // verify range index
+                potionIndex[vesselIndex] = (potionIndex[vesselIndex] < 0) ? numberOfColor - 1 : (potionIndex[vesselIndex]) % numberOfColor;
+            }
         }
+    }
+
+    public void ApplyCraft()
+    {
+
     }
 }
