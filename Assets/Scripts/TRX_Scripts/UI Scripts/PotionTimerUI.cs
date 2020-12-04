@@ -36,10 +36,14 @@ public class PotionTimerUI : MonoBehaviour
     private float startTimer;
     private bool timerComplete = false;
 
-
+    public GameObject showPotion;
+    public PotionCompleteUI m_potionComplete;
+    bool displayComplete;
     // Start is called before the first frame update
     void Start()
     {
+        showPotion = GameObject.FindGameObjectWithTag("PotionCreationUI");
+        m_potionComplete = showPotion.GetComponent<PotionCompleteUI>();
         //startTimer = currentPotion.tempsDeLaRecette;
         startTime = Time.time;
         //UpdateGraphics();
@@ -118,9 +122,24 @@ public class PotionTimerUI : MonoBehaviour
             string seconds = (currentTimer).ToString("f0");
 
             timerText.text = minutes + " : " + seconds;
+            Debug.Log("currentTimer" + currentTimer);
+            displayComplete = true;
+
             if(currentTimer <= 0f)
             {
                 timerComplete = true;
+                Debug.Log("end timer");
+
+                //validateButton.gameObject.SetActive(true);
+
+                if (displayComplete)
+                {
+                    m_potionComplete.SetPotion(currentPotion);
+                    m_potionComplete.canvas.SetActive(true);
+                    currentPotion.isCrafted = true;
+                    displayComplete = false;
+                }
+
             }
         }
         else
@@ -132,15 +151,23 @@ public class PotionTimerUI : MonoBehaviour
     private void OnTimerComplete()
     {
         if (onTimerCleared != null) onTimerCleared.Invoke();
+
+       
     }
 
     public void SetPotion(Potions potion)
     {
         currentPotion = potion;
         startTimer = potion.tempsDeLaRecette;
+        currentTimer = startTimer;
+
         timerComplete = false;
         UpdateGraphics();
     }
 
+    public void CompletePotion()
+    {
+       
+    }
 
 }

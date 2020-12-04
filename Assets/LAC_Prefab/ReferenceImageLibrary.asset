@@ -19,19 +19,19 @@ MonoBehaviour:
       m_GuidLow: 5127236987770794193
       m_GuidHigh: 6963712432443420805
     m_SerializedTextureGuid:
-      m_GuidLow: 16543073887550153118
-      m_GuidHigh: 10851856161658889498
-    m_Size: {x: 0.1, y: 0.1}
+      m_GuidLow: 595741653214567362
+      m_GuidHigh: 13092729821276736907
+    m_Size: {x: 1, y: 1}
     m_SpecifySize: 1
     m_Name: book
     m_Texture: {fileID: 0}
   - m_SerializedGuid:
-      m_GuidLow: 5728809495327448258
-      m_GuidHigh: 9546010836421555603
+      m_GuidLow: 5625979152045498858
+      m_GuidHigh: 12176984563449264056
     m_SerializedTextureGuid:
-      m_GuidLow: 17119504036697359908
-      m_GuidHigh: 17543411055008666747
-    m_Size: {x: 0.1, y: 0.1}
+      m_GuidLow: 15556567852170395994
+      m_GuidHigh: 18031624705412413530
+    m_Size: {x: 2, y: 1.9986496}
     m_SpecifySize: 1
     m_Name: flask
     m_Texture: {fileID: 0}

@@ -20,19 +20,15 @@ public class PotionCompleteUI : MonoBehaviour
     public Button validateButton;
     [Space(10f)]
     public Potions currentPotion = null;
-    public UnityEvent onValidate;
+    public GameObject canvas;
 
     // Start is called before the first frame update
     void Start()
     {
         //UpdateGraphics();
+        validateButton.onClick.AddListener(disableCanvas);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void UpdateGraphics()
     {
@@ -47,5 +43,10 @@ public class PotionCompleteUI : MonoBehaviour
         currentPotion = potion;
         UpdateGraphics();
 ;
+    }
+    public void disableCanvas()
+    {
+        Debug.Log("Disable Canvas");
+        canvas.SetActive(false);
     }
 }

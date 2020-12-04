@@ -180,8 +180,8 @@ public class PotionSelection : MonoBehaviour
         // reset bocaux
         for (int i = 0; i < potionsBocaux.Length; i++)
         {
-            //potionsBocaux[i].currentIngredient = Potions.Ingredients.EMPTY; 
-            //potionIndex[i] = 0;
+            potionsBocaux[i].currentIngredient = Potions.Ingredients.EMPTY; 
+            potionIndex[i] = 0;
         }
 
         //potionTimer.SetActive(true);

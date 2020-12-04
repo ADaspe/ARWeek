@@ -30,6 +30,9 @@ public class TrackImageModifier : MonoBehaviour
                     if (!o.display)
                     {
                         GameObject instObj = Instantiate(o.imagePrefab, trackedImage.gameObject.transform);
+                        Debug.Log("Display prefab" + o.imageName);
+                        Debug.Log("Cam track" + Camera.main.transform.position);
+                        Debug.Log("obj track" + o.imageName +" : "+ instObj.transform.position);
                         o.SetObject(instObj);
                         o.SetDisplay(true);
                     }

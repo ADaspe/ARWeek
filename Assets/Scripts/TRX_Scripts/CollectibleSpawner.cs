@@ -108,7 +108,7 @@ namespace Collectibles
             /*GameObject go2 = Instantiate(toSpawn) as GameObject;
             go2.transform.position = Camera.main.transform.position + Camera.main.transform.forward * 1f;*/
             collSpawned = Instantiate(toSpawn);
-            collSpawned.transform.position = Camera.main.transform.position + Camera.main.transform.forward * 200f + new Vector3(Random.Range(-10, 10), Random.Range(-10, 10), profondeur);
+            collSpawned.transform.position = Camera.main.transform.position + Camera.main.transform.forward * 200f + new Vector3(Random.Range(-100, 100), Random.Range(-100, 100), profondeur);
             //ARSessionOrigin.MakeContentAppearAt(collSpawned.transform, spawn.position);
             //Demander à Alexis comment on fait pour faire spawner un truc en face de la caméra
             if (debug) print("Collectible Spawned !");

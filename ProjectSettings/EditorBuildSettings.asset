@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/LAC_TestScene.unity
     guid: e5bbf73efe5581243b711b42dc27d0fc
   - enabled: 0
@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/TRX_Scenes/GarbageTest_Scene.unity
     guid: 1eec631fb02474848926483c949bb843
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/FinalScene.unity
     guid: 49c0b92ff70b77f4c827646fc2a54b8d
   m_configObjects:
